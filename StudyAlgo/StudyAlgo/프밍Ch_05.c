@@ -162,18 +162,85 @@
 //    return 0;
 //}
 
+//int main()
+//{
+//    int num=0,sum=0,i=0;
+//    printf("정수 5개 입력");
+//
+//    while (i<5) {
+//        scanf("%d",&num);
+//        sum += num;
+//        i++;
+//    }
+//
+//    printf("합계: %d\n",sum);
+//
+//    return 0;
+//}
+
 int main()
 {
-    int num=0,sum=0,i=0;
-    printf("정수 5개 입력");
+    //    int i = 0;
+    //    do printf("%d ", i++);
+    //    while(i<10);
+    //
+    //    printf("\n");
+    //
     
-    while (i<5) {
-        scanf("%d",&num);
-        sum += num;
+    
+    //    while(1)
+    //    {
+    //        printf("무한 루프");
+    //    }
+    
+    //    int i;
+    //    for(i=10;i>0;i--)
+    //    {
+    //        if(i % 3 ==0)break;
+    //        printf("%d ",i);
+    //    }
+//    int i;
+//    i = 10;
+//    do
+//    {
+//        if(i%3==0)
+//        {
+//            goto quit;
+//            //return 1
+//            i--;
+//            continue;
+//        }
+//        printf("%d",i);
+//        i--;
+//    }while (i>0);
+//quit:
+
+//    int c;
+//    while ((c=getchar()) != EOF)
+//    {
+//        putchar(c);
+//    }
+    char str[80];
+    int ch;
+    int i;
+    
+    printf("문자열을 입력하세요: ");
+    for(i=0;i<4;i++)
+    {
+        ch = getchar();
+        str[i] = ch;
+    }
+    
+    str[i] = '\0';
+    
+    
+    printf("입력된 문자열: ");
+    i = 0;
+    while(str[i] != '\0')
+    {
+        putchar(str[i]);
         i++;
     }
     
-    printf("합계: %d\n",sum);
-    
-    return 0;
+return 0;
 }
