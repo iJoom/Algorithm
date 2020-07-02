@@ -129,21 +129,80 @@
 //}
 
 
+//int main()
+//{
+//    int amount;
+//    int price = 0 ;
+//    int total_price = 0;
+//
+//    printf("amount = %d, price = %d\n",amount,price);
+//
+//    printf("수량? ");
+//    scanf("%d",&amount);
+//
+//    price = 2000;
+//
+//    total_price = amount * price;
+//    printf("합계: %d원\n",total_price);
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//
+//    printf("sizeof(\'a\') = %d\n",sizeof('a'));
+//    printf("sizeof(12345) = %d\n",sizeof(12345));
+//    printf("sizeof(12345U) = %d\n",sizeof(12345U));
+//    printf("sizeof(12345L) = %d\n",sizeof(12345L));
+//     printf("sizeof(12345LL) = %d\n",sizeof(12345LL));
+//     printf("sizeof(12345ULL) = %d\n",sizeof(12345ULL));
+//
+//
+//    printf("sizeof(12.34F) = %d\n",sizeof(12.34F));
+//    printf("sizeof(12.34567) = %d\n",sizeof(12.34567));
+//    printf("sizeof(1.234e-5) = %d\n",sizeof(1.234e-5));
+//
+//    printf("sizeof(\"abcde\") = %d\n",sizeof("abcde"));
+//    return 0;
+//}
+
+//#define PI 3.14
+//
+//int main()
+//{
+//    double radius = 0;
+//    double area = 0;
+//
+//    printf("반지름? ");
+//    scanf("%lf",&radius);
+//
+//    area = PI * radius * radius;
+//
+//    printf("원의 면적: %.2f\n",area);
+//    printf("PI = %.2f\n",PI);
+//    return 0;
+//}
+
+
 int main()
 {
-    int amount;
+    int amount = 0;
     int price = 0 ;
+    const double VAT_RATE = 0.1;
+    // VAT_RATE = 0.2; const 상수 에러
     int total_price = 0;
-    
-    printf("amount = %d, price = %d\n",amount,price);
-    
+
+    printf("수량? ");
+    scanf("%d", &amount);
+
     printf("수량? ");
     scanf("%d",&amount);
-    
+
     price = 2000;
-    
+
     total_price = amount * price;
     printf("합계: %d원\n",total_price);
-    
+
     return 0;
 }
