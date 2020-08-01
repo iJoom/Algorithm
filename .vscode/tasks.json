@@ -2,40 +2,75 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build_gcc",
             "type": "shell",
-            "command": "gcc",
+            "label": "C bulid for clang",
+            "command": "clang",
             "args": [
                 "-g",
+                "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.out",
-                "${file}"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "presentation": {
+                "clear": true
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": []
         },
         {
-            "label": "build_g++",
             "type": "shell",
-            "command": "g++",
+            "label": "C++ bulid for clang++",
+            "command": "clang++",
             "args": [
                 "-g",
+                "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.out",
-                "${file}"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "presentation": {
+                "clear": true
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "execute",
+            "command": "${fileDirname}/${fileBasenameNoExtension}",
+            "group": "test",
+            "presentation": {
+                "clear": true
             }
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: clang build active file",
+            "command": "/usr/bin/clang",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
         }
     ]
-
-    
-          
 }
