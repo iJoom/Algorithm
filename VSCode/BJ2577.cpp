@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 //백준 2577 Success at once
 int arr[10];
