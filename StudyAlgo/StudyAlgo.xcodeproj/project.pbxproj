@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55D5557924ADC31B00ED98B7 /* 프밍 Ch_06.c in Sources */ = {isa = PBXBuildFile; fileRef = 55D5557824ADC31B00ED98B7 /* 프밍 Ch_06.c */; };
+		55736DE425DFA8B8008E4F5B /* Kakaoblind-2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55736DE325DFA8B8008E4F5B /* Kakaoblind-2.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		55736DE325DFA8B8008E4F5B /* Kakaoblind-2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Kakaoblind-2.cpp"; sourceTree = "<group>"; };
 		55D18F8324AD676900D95E56 /* DFS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DFS.cpp; sourceTree = "<group>"; };
 		55D18F8724AD703900D95E56 /* newDFS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = newDFS.cpp; sourceTree = "<group>"; };
 		55D5557024AD7DA500ED98B7 /* 프입Ch_02.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "프입Ch_02.c"; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 				55D5557424ADA7EF00ED98B7 /* 프밍Ch_04.c */,
 				55D5557624ADB05B00ED98B7 /* 프밍Ch_05.c */,
 				55D5557824ADC31B00ED98B7 /* 프밍 Ch_06.c */,
+				55736DE325DFA8B8008E4F5B /* Kakaoblind-2.cpp */,
 			);
 			path = StudyAlgo;
 			sourceTree = "<group>";
@@ -133,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D5557924ADC31B00ED98B7 /* 프밍 Ch_06.c in Sources */,
+				55736DE425DFA8B8008E4F5B /* Kakaoblind-2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
