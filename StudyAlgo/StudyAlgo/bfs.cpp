@@ -5,6 +5,7 @@
 #include <queue>
 #include <algorithm>
 #include<utility>
+
 #define X first
 #define Y second
 
@@ -34,7 +35,7 @@ int main()
       Q.push({0,0});
       vis[0][0] = 0; // {0,0} = 0으로 하지않으면, -1값이므로 skip됨
 
-      int dis = 0;
+      
       while (!Q.empty())
       {
 
@@ -53,7 +54,6 @@ int main()
       }
 
       cout<<vis[n-1][m-1]+1;
-
 
 
 
