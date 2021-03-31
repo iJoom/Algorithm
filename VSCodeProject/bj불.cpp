@@ -20,7 +20,9 @@ int dy[4] = {0,1,0,-1};
 
 int main() {
 
-
+ ios::sync_with_stdio(0);
+  cin.tie(0);
+  
     int n,m;
     cin>>n>>m;
 
@@ -60,35 +62,46 @@ int main() {
         }
     }
 
+    // for (int a = 0; a < n; a++)
+    // { //불체크
+    //     for (int b = 0; b < m; b++)
+    //     {
+    //         cout << fire[a][b];
+    //     }
+    //     cout << "\n";
+    // }
+
+    bool check = false;
+
     while (!J.empty())
     {
-        pair<int,int> cur = J.front(); J.pop();
+        auto cur = J.front(); J.pop();
+
         for(int d=0;d<4;d++) {
             int nx = cur.X + dx[d];
-            int ny= cur.Y + dy[d];
-            if(nx<0 || nx>=n || ny<0 || ny>=m)continue;
-            if(dist[nx][ny]>=0 || fire[nx][ny]>dist[cur.X][cur.Y] || board[nx][ny]=='#')continue;
+            int ny = cur.Y + dy[d];
+
+            if(nx<0 || nx>=n || ny<0 || ny >= m){
+                cout<<dist[cur.X][cur.Y]+1;
+                // cout<<"탈출";
+                // check = true;
+                // break;
+                return 0;
+            }
+            if(dist[nx][ny]>=0 || board[nx][ny]=='#')continue;
+            if(fire[nx][ny] != -1 && fire[nx][ny] <= dist[cur.X][cur.Y]+1 )continue;
             dist[nx][ny] = dist[cur.X][cur.Y]+1;
             J.push({nx,ny});
         }
+        //if(check==true)break;
     }
-    //거의다옴 다시 트라이
-    
 
-    //   for(int a=0;a<n;a++){ //불체크
+    // for(int a=0;a<n;a++){ 
     //     for(int b=0;b<m;b++){
-    //         cout<<fire[a][b];            
-    //         }
+    //         cout<<dist[a][b];            
+    //     }
     //     cout<<"\n";
     // }
-
-      for(int a=0;a<n;a++){ 
-        for(int b=0;b<m;b++){
-            cout<<dist[a][b];            
-            }
-        cout<<"\n";
-    }
-
-
+    cout << "IMPOSSIBLE";
     return 0;
 }
