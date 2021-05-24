@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
-#include<limits.h>
+
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int dp(int k) {
 }
 
 int main() {
-    //BF인줄 알았으나, DP 문제
+    //BF로도 가능하며 , 대중적인 풀이는 DP 문제
 
     //A(1) = 1 경우의 수 1
     //A(2) = 1+1 , 2 경우의 수 2

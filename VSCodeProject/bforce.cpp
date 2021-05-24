@@ -4,7 +4,7 @@
 #include<algorithm>
 
 using namespace std;
-int answer;
+//int answer;
 
 string ch[50];
     int N;
@@ -72,15 +72,15 @@ int main() {
     }
 
     for(int a=0;a<N;a++) {
-        for(int b=0;b<N;b++) {
+        for(int b=0;b<N-1;b++) {
             
             swap(ch[a][b],ch[a][b+1]);
             result = max(result,eatcandy());
             swap(ch[a][b],ch[a][b+1]);
 
-            swap(ch[a][b],ch[a+1][b]);
+            swap(ch[b][a],ch[b+1][a]);
             result = max(result,eatcandy());
-            swap(ch[a][b],ch[a+1][b]);
+            swap(ch[b][a],ch[b+1][a]);
         }
     }
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <limits.h>
 using namespace std;
 
 
@@ -26,7 +27,7 @@ int main()
     vector<int> majic{1,2,3,4,5,6,7,8,9};
     vector<int> m(9);
 
-    int answer = 0;
+    int answer = INT_MAX;
 
     for(int i=0;i<9;i++)cin>>m[i];
 
@@ -37,9 +38,7 @@ int main()
             for(int i=0;i<9;i++) {
                     im += abs(m[i]-majic[i]);
             }
-            if(answer == 0 || answer>im) {
-            answer = im;
-            }
+            answer = min(answer,im);
         }
     } while (next_permutation(majic.begin(),majic.end()));
     
@@ -69,31 +68,6 @@ int main()
     //     cout<<endl; 
     // }while(prev_permutation(c.begin(),c.end()));
 
-    
-
-    
-	// vector<int> a(9);
-	// for (int i = 0; i < 9; ++i)
-	// 	cin >> a[i];
-
-	// vector<int> picked(9);
-	// for (int i = 0; i < 9; ++i)
-	// 	picked[i] = i + 1;
-
-	// int ans = -1;
-	// do {
-	// 	if (solve(picked)) {
-
-	// 		int diff = 0;
-	// 		for (int i = 0; i < 9; ++i) {
-	// 			diff += abs(a[i] - picked[i]);
-	// 		}
-	// 		if (ans == -1 || ans > diff) {
-	// 			ans = diff;
-	// 		}
-	// 	}
-	// } while (next_permutation(picked.begin(), picked.end()));
-
-	// cout << ans << "\n";
+   
 	return 0;
 }

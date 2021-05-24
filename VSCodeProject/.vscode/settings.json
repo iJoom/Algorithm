@@ -4,6 +4,12 @@
         "markdown"
     ],
     "files.associations": {
-        "queue": "cpp"
+        "queue": "cpp",
+        "string": "cpp",
+        "iosfwd": "cpp",
+        "type_traits": "cpp",
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "vector": "cpp"
     }
 }
