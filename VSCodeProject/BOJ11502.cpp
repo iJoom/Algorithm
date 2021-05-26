@@ -3,12 +3,14 @@
 #include <vector>
 #include <string>
 #include <math.h>
+#include <ctime>
 
 using namespace std;
 
-int m[1001]; // 에라토스테네스의 체
+int m[1001]; // 에라토스테네스의 체 배열 크기 지정
 
 void eratos() {
+
    for(int i=2;i<1000;i++) {
        if(m[i]==1)continue;
        for(int k=i+i;k<1000;k+=i){
@@ -20,35 +22,50 @@ void eratos() {
 int main() {
     int cnt;
     int judge = 0;
+    clock_t start,end;
+    
+    
 
+    start = clock();
     eratos(); // m[] == 0 이면 소수 , 1이면 소수X
-    cin>>cnt;
-    int num;
-    while(cnt>0){
-        cnt--;
+    end = clock();
+    double duration = (double)(end-start)/CLOCKS_PER_SEC;
+    cout<<duration<<endl;
 
-        judge = 0;
-        cin>>num;
+    // int ck=0;
+    // for(int i=2;i<1000;i++){
+    //     if(m[i]==0)cout<<i<<' ';
+    //     ck++;
+    //     if(ck%10==0)cout<<endl;
+    // }
+    
+    
+    // cin>>c
+    // while(cnt>0){
+    //     cnt--;
 
-        for(int a=2;a<1000;a++) {
-            if(m[a]==1)continue;
-        for(int b=2;b<1000;b++){
-                if(m[b]==1)continue;
-            for(int c=2;c<1000;c++) {
-                 if(m[c]==1)continue;
-                if((a+b+c) == num) {
-                    cout<<a<<' '<<b<<' '<<c<<endl;
-                    judge = 1;
-                    break;
-                }
-            }
-            if(judge == 1)break;
-        }
-        if(judge == 1)break;
-    }
-    if(judge != 1)cout<<0<<endl;
+    //     judge = 0;
+    //     cin>>num;
 
-    }
+    //     for(int a=2;a<1000;a++) {
+    //         if(m[a]==1)continue;
+    //     for(int b=2;b<1000;b++){
+    //             if(m[b]==1)continue;
+    //         for(int c=2;c<1000;c++) {
+    //              if(m[c]==1)continue;
+    //             if((a+b+c) == num) {
+    //                 cout<<a<<' '<<b<<' '<<c<<endl;
+    //                 judge = 1;
+    //                 break;
+    //             }
+    //         }
+    //         if(judge == 1)break;
+    //     }
+    //     if(judge == 1)break;
+    // }
+    // if(judge != 1)cout<<0<<endl;
+
+    // }
     
 
     return 0;
