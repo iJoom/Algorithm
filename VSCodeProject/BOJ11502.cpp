@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int m[1000]; // 에라토스테네스의 체
+int m[1001]; // 에라토스테네스의 체
 
 void eratos() {
    for(int i=2;i<1000;i++) {
