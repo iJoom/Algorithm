@@ -21,30 +21,55 @@ using namespace std;
 //     }
 // }
 
-int ary[10];
-bool isused[10];
-int n,m;
-void backtrack(int depth){
-    if(depth == m){
-        for(int i=0;i<m;i++){
-            cout<<ary[i]<<' ';
-        }
-        cout<<'\n';
-        return;
-    }
+// int ary[10];
+// bool isused[10];
+// int n,m;
+// void backtrack(int depth){
+//     if(depth == m){
+//         for(int i=0;i<m;i++){ // depth출력이므로 0부터 시작
+//             cout<<ary[i]<<' ';
+//         }
+//         cout<<'\n';
+//         //return;
+//     }
     
-    for(int i=1;i<=n;i++){
-        if (!isused[i])
-        {
-            ary[depth] = i;
-            isused[i] = 1;
-            backtrack(depth+1);
-            isused[i] = false;
-        }
-    }
+//     for(int i=1;i<=n;i++){
+//         if (!isused[i]) // 숫자 사용했는지 체크이므로 1부터 isused[1] = false는 1사용 X
+//         {
+//             ary[depth] = i;
+//             isused[i] = 1;
+//             backtrack(depth+1);
+//             isused[i] = false;
+//         }
+//     }
+// }
+// int main(void)
+// {
+//     cin >> n >> m;
+//     backtrack(0);
+// }
+
+int n, s; //boj1182
+int arr[30];
+int cnt = 0;
+void func(int cur, int tot){
+  if(cur == n){
+    if(tot == s) cnt++;
+    return;
+  }
+  cout<<cur<<' '<<tot<<endl;
+  func(cur+1, tot);
+  cout<<cur<<"func다음1  "<<tot<<endl;
+  func(cur+1, tot+arr[cur]);
+  cout<<cur<<"func다음2  "<<tot<<endl;
 }
-int main(void)
-{
-    cin >> n >> m;
-    backtrack(0);
+int main(void) {
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cin >> n >> s;
+  for(int i = 0; i < n; i++)
+    cin >> arr[i];
+  func(0, 0);
+  if(s == 0) cnt--;
+  cout << cnt;
 }
