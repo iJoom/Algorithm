@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <math.h>
+//#include <math.h>
 using namespace std;
 
 int n, m;
@@ -15,12 +15,8 @@ int main()
     }
 
     int start;
-    for (int i = 1; i * i < n * m; i++)
-    {
-        start = i * i;
-    }
-    start = sqrt(start); // 최대 정사각형 길이
-    start = min(n,m);
+    
+    start = min(n,m); // 최대 정사각형 한변의 길이
     int answer = 0;
     for (int i = 0; i < n; i++)
     {
