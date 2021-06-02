@@ -4,49 +4,57 @@
 #include <string>
 #include <math.h>
 #include <ctime>
+#include <queue>
 
 using namespace std;
 bool check[1001];
 
-int main() {
-    int n,w,l;
+int main()
+{
+    int n, w, l;
     vector<int> weight;
-    int answer=0;
-    cin>>n>>w>>l;
+    vector<pair<int, int>> bridgew;
+    queue<int> q;
 
+
+    int time = 0;
+    cin >> n;
+    cin >> w;
+    cin >> l;
+    cin.clear();
+    int c;
     for (int i = 0; i < n; i++)
     {
-       cin>>weight[i];
+        cin >> c;
+        weight.push_back(c);
     }
 
-    while (n>0)
+    int now = 0;
+    int truck = 0;
+    while (1)
     {
-        int now = 0;
-        int cnt =0;
-        for (int i = 0; i < n; i++)
+        time++;
+
+        if(q.size()==w){
+            now-=q.front();
+            q.pop();
+        }
+
+        if (now + weight[truck]<=l)
         {
-            if(check[i]==true)continue;
-            if(now+weight[i]<=l){
-                now+=weight[i];
-                check[i]=true;
-                cnt++;
+            if (truck == n-1)
+            {
+                time+=w;
+                break;
             }
+            
+            q.push(weight[truck]);
+            now+=weight[truck];
+            truck++;
+        } else {
+            q.push(0);
         }
-
-        for (int i = 0; i < w; i++)
-        {
-            answer+=1;
-        }
-        n-=cnt;
-        
-        
-        //(다리 건너기 전) 건널 수 있는 트럭 무게 체크 , 동시에 건널 수 있는 만큼 최대로
-        //(다리 건너는중) 다리에 트럭 올리고 무게체크
-        //트럭이 다리 다 지나가면, 다시 또 체크
     }
-    
-    cout<<answer;
-
-    
+    cout << time;
     return 0;
 }
