@@ -37,7 +37,7 @@ int main() {
         }
         test.clear();
     }
-    if(start_num == 1){
+    if(start_num == 1 || start_num == 0){
         cout<<0;
         return 0;
     }
