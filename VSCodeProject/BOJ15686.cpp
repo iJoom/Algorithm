@@ -17,7 +17,7 @@ int main()
 {
     cin >> n >> m;
 
-    //문제에서 좌표를 1,1 부터 시작하므로 행열 1,1부터 입력 받음
+
     for (int i = 0; i < n; i++)
     {
         for (int p = 0; p < n; p++)
@@ -49,7 +49,7 @@ int main()
             }
             total_dist+=tmp;
         }
-        min_dis = min(total_dist,min_dis);
+        min_dis = min(total_dist,min_dis); // min_dis 모든집의 치킨거리 최소 총합 저장
     } while (next_permutation(brute.begin(), brute.end()));
 
     cout << min_dis;
