@@ -47,7 +47,7 @@ using namespace std;
 // {
 //     cin >> n >> m;
 //     backtrack(0);
-// }
+// } 복습 test
 
 int n, s; //boj1182
 int arr[30];
