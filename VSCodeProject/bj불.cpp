@@ -69,7 +69,7 @@ int main() {
     //         cout << fire[a][b];
     //     }
     //     cout << "\n";
-    // }
+    // } 불 코드복기
 
     bool check = false;
 
